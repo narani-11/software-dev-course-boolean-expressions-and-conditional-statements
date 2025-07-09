@@ -50,3 +50,26 @@ Add Customization and expand the game:
   - Use nested conditionals and logical operators to create complex outcomes.
 
 */
+
+const readline = require('readline-sync');
+const hasTorch = true;
+const hasMap = false;
+const hasSword = false;
+console.log("You see two paths: one leads to the mountains, the other to the village.");
+const choice = readline.question("Do you go to the 'mountains' or the 'village'? ").toLowerCase();
+
+if (choice === "mountains") {
+  if (hasTorch) {
+    console.log("You safely navigate through the dark mountains.");
+  } else {
+    console.log("It's too dark to proceed. You decide to turn back.");
+  }
+} else if (choice === "village") {
+  if (hasMap || hasSword) {
+    console.log("You find your way to the village safely.");
+  } else {
+    console.log("You get lost and wander aimlessly.");
+  }
+} else {
+  console.log("You hesitate and don't choose a path.");
+}
